@@ -1,0 +1,1590 @@
+Microsoft Windows [version 10.0.19045.6466]
+(c) Microsoft Corporation. Tous droits réservés.
+
+D:\Facultate\Disertatie\mainProject\pythonProject1>python cotraining,py
+python: can't open file 'D:\\Facultate\\Disertatie\\mainProject\\pythonProject1\\cotraining,py': [Errno 2] No such file or directory
+
+D:\Facultate\Disertatie\mainProject\pythonProject1>python cotraining.py
+
+
+================================================================================
+EXPERIMENT 1/9
+================================================================================
+
+================================================================================
+Starting Experiment: large_20_start5_rgb0.95_fft0.9
+Dataset: large_20 (20% unlabeled)
+Co-training starts: Epoch 5
+Thresholds - RGB: 0.95, FFT: 0.9
+================================================================================
+Using device: cuda
+Number of classes: 6
+Starting co-training...
+
+Epoch 1/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9034, FFT: 0.6045, Combined: 0.8875
+
+Epoch 2/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9110, FFT: 0.6793, Combined: 0.9060
+
+Epoch 3/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9370, FFT: 0.6944, Combined: 0.9303
+
+Epoch 4/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9463, FFT: 0.6398, Combined: 0.9353
+
+Epoch 5/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9513, FFT: 0.7204, Combined: 0.9387
+
+Epoch 6/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Added 200 new RGB-labeled samples to FFT dataset
+Added 199 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9446, FFT: 0.7338, Combined: 0.9404
+
+Epoch 7/20
+RGB dataset size: 6943, FFT dataset size: 6944
+Used unlabeled samples: 283/1984
+Added 198 new RGB-labeled samples to FFT dataset
+Added 193 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9429, FFT: 0.7565, Combined: 0.9404
+
+Epoch 8/20
+RGB dataset size: 7136, FFT dataset size: 7142
+Used unlabeled samples: 617/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 6
+Number of removed FFT samples is: 24
+The removal rate for RGB dataset: 0.03
+The removal rate for FFT dataset: 0.12
+The new confidence threshold for RGB model is: 0.95
+The new confidence threshold for FFT model is: 0.891
+Added 198 new RGB-labeled samples to FFT dataset
+Added 197 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9479, FFT: 0.7624, Combined: 0.9404
+
+Epoch 9/20
+RGB dataset size: 7327, FFT dataset size: 7316
+Used unlabeled samples: 960/1984
+Added 196 new RGB-labeled samples to FFT dataset
+Added 125 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9496, FFT: 0.7431, Combined: 0.9446
+
+Epoch 10/20
+RGB dataset size: 7452, FFT dataset size: 7512
+Used unlabeled samples: 1255/1984
+Added 195 new RGB-labeled samples to FFT dataset
+Added 24 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9362, FFT: 0.7372, Combined: 0.9219
+
+Epoch 11/20
+RGB dataset size: 7476, FFT dataset size: 7707
+Used unlabeled samples: 1470/1984
+Added 199 new RGB-labeled samples to FFT dataset
+Added 32 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9580, FFT: 0.7893, Combined: 0.9496
+
+Epoch 12/20
+RGB dataset size: 7508, FFT dataset size: 7906
+Used unlabeled samples: 1692/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 16
+Number of removed FFT samples is: 130
+The removal rate for RGB dataset: 0.08
+The removal rate for FFT dataset: 0.65
+The new confidence threshold for RGB model is: 0.95
+The new confidence threshold for FFT model is: 0.8464499999999999
+Added 125 new RGB-labeled samples to FFT dataset
+Added 6 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9563, FFT: 0.7649, Combined: 0.9563
+
+Epoch 13/20
+RGB dataset size: 7498, FFT dataset size: 7901
+Used unlabeled samples: 1822/1984
+Added 20 new RGB-labeled samples to FFT dataset
+Added 8 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9446, FFT: 0.7657, Combined: 0.9437
+
+Epoch 14/20
+RGB dataset size: 7506, FFT dataset size: 7921
+Used unlabeled samples: 1850/1984
+Added 15 new RGB-labeled samples to FFT dataset
+Added 3 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9547, FFT: 0.7851, Combined: 0.9488
+
+Epoch 15/20
+RGB dataset size: 7509, FFT dataset size: 7936
+Used unlabeled samples: 1867/1984
+Added 19 new RGB-labeled samples to FFT dataset
+Added 7 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9437, FFT: 0.7951, Combined: 0.9328
+
+Epoch 16/20
+RGB dataset size: 7516, FFT dataset size: 7955
+Used unlabeled samples: 1892/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 25
+Number of removed FFT samples is: 86
+The removal rate for RGB dataset: 0.125
+The removal rate for FFT dataset: 0.43
+The new confidence threshold for RGB model is: 0.9405
+The new confidence threshold for FFT model is: 0.8210564999999999
+Added 32 new RGB-labeled samples to FFT dataset
+Added 5 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9505, FFT: 0.8060, Combined: 0.9395
+
+Epoch 17/20
+RGB dataset size: 7496, FFT dataset size: 7901
+Used unlabeled samples: 1928/1984
+Added 20 new RGB-labeled samples to FFT dataset
+Added 4 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9353, FFT: 0.8077, Combined: 0.9387
+
+Epoch 18/20
+RGB dataset size: 7500, FFT dataset size: 7921
+Used unlabeled samples: 1952/1984
+Added 2 new RGB-labeled samples to FFT dataset
+Added 3 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9471, FFT: 0.7851, Combined: 0.9429
+
+Epoch 19/20
+RGB dataset size: 7503, FFT dataset size: 7923
+Used unlabeled samples: 1957/1984
+Added 6 new RGB-labeled samples to FFT dataset
+Added 3 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9429, FFT: 0.7909, Combined: 0.9404
+
+Epoch 20/20
+RGB dataset size: 7506, FFT dataset size: 7929
+Used unlabeled samples: 1965/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 13
+Number of removed FFT samples is: 79
+The removal rate for RGB dataset: 0.065
+The removal rate for FFT dataset: 0.395
+The new confidence threshold for RGB model is: 0.9405
+The new confidence threshold for FFT model is: 0.7964248049999998
+Added 5 new RGB-labeled samples to FFT dataset
+Added 3 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9261, FFT: 0.7976, Combined: 0.9253
+
+Testing on test set...
+Test Accuracy - RGB: 0.9238, FFT: 0.8048, Combined: 0.9246
+Models saved: models/large_20_start5_rgb0.95_fft0.9_rgb.pth, models/large_20_start5_rgb0.95_fft0.9_fft.pth
+
+Final Statistics:
+RGB dataset final size: 7496 (original + pseudo-labels)
+FFT dataset final size: 7855 (original + pseudo-labels)
+Total unlabeled samples used: 1973/1984
+RGB pseudo-samples: 752
+FFT pseudo-samples: 1111
+
+
+================================================================================
+EXPERIMENT 2/9
+================================================================================
+
+================================================================================
+Starting Experiment: large_20_start5_rgb0.9_fft0.85
+Dataset: large_20 (20% unlabeled)
+Co-training starts: Epoch 5
+Thresholds - RGB: 0.9, FFT: 0.85
+================================================================================
+Using device: cuda
+Number of classes: 6
+Starting co-training...
+
+Epoch 1/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.8883, FFT: 0.6129, Combined: 0.8766
+
+Epoch 2/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.8825, FFT: 0.6793, Combined: 0.8757
+
+Epoch 3/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9328, FFT: 0.7036, Combined: 0.9253
+
+Epoch 4/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.8917, FFT: 0.7229, Combined: 0.8959
+
+Epoch 5/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9295, FFT: 0.7540, Combined: 0.9228
+
+Epoch 6/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Added 200 new RGB-labeled samples to FFT dataset
+Added 199 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9463, FFT: 0.7372, Combined: 0.9412
+
+Epoch 7/20
+RGB dataset size: 6943, FFT dataset size: 6944
+Used unlabeled samples: 328/1984
+Added 195 new RGB-labeled samples to FFT dataset
+Added 192 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9312, FFT: 0.7607, Combined: 0.9177
+
+Epoch 8/20
+RGB dataset size: 7135, FFT dataset size: 7139
+Used unlabeled samples: 673/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 3
+Number of removed FFT samples is: 48
+The removal rate for RGB dataset: 0.015
+The removal rate for FFT dataset: 0.24
+The new confidence threshold for RGB model is: 0.9
+The new confidence threshold for FFT model is: 0.8415
+Added 196 new RGB-labeled samples to FFT dataset
+Added 198 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9463, FFT: 0.7565, Combined: 0.9454
+
+Epoch 9/20
+RGB dataset size: 7330, FFT dataset size: 7287
+Used unlabeled samples: 1023/1984
+Added 198 new RGB-labeled samples to FFT dataset
+Added 97 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9379, FFT: 0.7691, Combined: 0.9353
+
+Epoch 10/20
+RGB dataset size: 7427, FFT dataset size: 7485
+Used unlabeled samples: 1287/1984
+Added 196 new RGB-labeled samples to FFT dataset
+Added 53 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9572, FFT: 0.7666, Combined: 0.9505
+
+Epoch 11/20
+RGB dataset size: 7480, FFT dataset size: 7681
+Used unlabeled samples: 1530/1984
+Added 197 new RGB-labeled samples to FFT dataset
+Added 37 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9521, FFT: 0.7884, Combined: 0.9404
+
+Epoch 12/20
+RGB dataset size: 7517, FFT dataset size: 7878
+Used unlabeled samples: 1743/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 29
+Number of removed FFT samples is: 88
+The removal rate for RGB dataset: 0.145
+The removal rate for FFT dataset: 0.44
+The new confidence threshold for RGB model is: 0.891
+The new confidence threshold for FFT model is: 0.816255
+Added 106 new RGB-labeled samples to FFT dataset
+Added 29 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9488, FFT: 0.7901, Combined: 0.9437
+
+Epoch 13/20
+RGB dataset size: 7517, FFT dataset size: 7896
+Used unlabeled samples: 1865/1984
+Added 69 new RGB-labeled samples to FFT dataset
+Added 8 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9521, FFT: 0.7674, Combined: 0.9530
+
+Epoch 14/20
+RGB dataset size: 7525, FFT dataset size: 7965
+Used unlabeled samples: 1939/1984
+Added 25 new RGB-labeled samples to FFT dataset
+Added 2 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9345, FFT: 0.7851, Combined: 0.9328
+
+Epoch 15/20
+RGB dataset size: 7527, FFT dataset size: 7990
+Used unlabeled samples: 1964/1984
+Added 5 new RGB-labeled samples to FFT dataset
+Validation Accuracy - RGB: 0.9622, FFT: 0.7985, Combined: 0.9521
+
+Epoch 16/20
+RGB dataset size: 7527, FFT dataset size: 7995
+Used unlabeled samples: 1969/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 14
+Number of removed FFT samples is: 102
+The removal rate for RGB dataset: 0.07
+The removal rate for FFT dataset: 0.51
+The new confidence threshold for RGB model is: 0.891
+The new confidence threshold for FFT model is: 0.7754422499999999
+Added 1 new RGB-labeled samples to FFT dataset
+Validation Accuracy - RGB: 0.9530, FFT: 0.8060, Combined: 0.9454
+
+Epoch 17/20
+RGB dataset size: 7513, FFT dataset size: 7894
+Used unlabeled samples: 1970/1984
+Added 3 new RGB-labeled samples to FFT dataset
+Added 2 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9547, FFT: 0.7893, Combined: 0.9488
+
+Epoch 18/20
+RGB dataset size: 7515, FFT dataset size: 7897
+Used unlabeled samples: 1974/1984
+Added 2 new RGB-labeled samples to FFT dataset
+Validation Accuracy - RGB: 0.9429, FFT: 0.7867, Combined: 0.9337
+
+Epoch 19/20
+RGB dataset size: 7515, FFT dataset size: 7899
+Used unlabeled samples: 1976/1984
+Added 1 new RGB-labeled samples to FFT dataset
+Added 1 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9421, FFT: 0.8119, Combined: 0.9320
+
+Epoch 20/20
+RGB dataset size: 7516, FFT dataset size: 7900
+Used unlabeled samples: 1978/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 4
+Number of removed FFT samples is: 80
+The removal rate for RGB dataset: 0.02
+The removal rate for FFT dataset: 0.4
+The new confidence threshold for RGB model is: 0.891
+The new confidence threshold for FFT model is: 0.7521789824999999
+Added 1 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9521, FFT: 0.7691, Combined: 0.9429
+
+Testing on test set...
+Test Accuracy - RGB: 0.9423, FFT: 0.7750, Combined: 0.9403
+Models saved: models/large_20_start5_rgb0.9_fft0.85_rgb.pth, models/large_20_start5_rgb0.9_fft0.85_fft.pth
+
+Final Statistics:
+RGB dataset final size: 7513 (original + pseudo-labels)
+FFT dataset final size: 7820 (original + pseudo-labels)
+Total unlabeled samples used: 1979/1984
+RGB pseudo-samples: 769
+FFT pseudo-samples: 1076
+
+
+================================================================================
+EXPERIMENT 3/9
+================================================================================
+
+================================================================================
+Starting Experiment: large_20_start5_rgb0.85_fft0.8
+Dataset: large_20 (20% unlabeled)
+Co-training starts: Epoch 5
+Thresholds - RGB: 0.85, FFT: 0.8
+================================================================================
+Using device: cuda
+Number of classes: 6
+Starting co-training...
+
+Epoch 1/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.8640, FFT: 0.6272, Combined: 0.8606
+
+Epoch 2/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.8631, FFT: 0.6440, Combined: 0.8564
+
+Epoch 3/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9270, FFT: 0.6801, Combined: 0.9236
+
+Epoch 4/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9337, FFT: 0.6994, Combined: 0.9236
+
+Epoch 5/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9379, FFT: 0.7389, Combined: 0.9295
+
+Epoch 6/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Added 200 new RGB-labeled samples to FFT dataset
+Added 198 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9479, FFT: 0.7531, Combined: 0.9421
+
+Epoch 7/20
+RGB dataset size: 6942, FFT dataset size: 6944
+Used unlabeled samples: 322/1984
+Added 192 new RGB-labeled samples to FFT dataset
+Added 198 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9312, FFT: 0.7599, Combined: 0.9261
+
+Epoch 8/20
+RGB dataset size: 7140, FFT dataset size: 7136
+Used unlabeled samples: 638/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 3
+Number of removed FFT samples is: 28
+The removal rate for RGB dataset: 0.015
+The removal rate for FFT dataset: 0.14
+The new confidence threshold for RGB model is: 0.85
+The new confidence threshold for FFT model is: 0.792
+Added 199 new RGB-labeled samples to FFT dataset
+Added 195 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9219, FFT: 0.7725, Combined: 0.9219
+
+Epoch 9/20
+RGB dataset size: 7332, FFT dataset size: 7307
+Used unlabeled samples: 990/1984
+Added 200 new RGB-labeled samples to FFT dataset
+Added 198 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9538, FFT: 0.7783, Combined: 0.9446
+
+Epoch 10/20
+RGB dataset size: 7530, FFT dataset size: 7507
+Used unlabeled samples: 1323/1984
+Added 194 new RGB-labeled samples to FFT dataset
+Added 87 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9236, FFT: 0.7767, Combined: 0.9202
+
+Epoch 11/20
+RGB dataset size: 7617, FFT dataset size: 7701
+Used unlabeled samples: 1584/1984
+Added 196 new RGB-labeled samples to FFT dataset
+Added 56 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9353, FFT: 0.7809, Combined: 0.9387
+
+Epoch 12/20
+RGB dataset size: 7673, FFT dataset size: 7897
+Used unlabeled samples: 1811/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 16
+Number of removed FFT samples is: 92
+The removal rate for RGB dataset: 0.08
+The removal rate for FFT dataset: 0.46
+The new confidence threshold for RGB model is: 0.85
+The new confidence threshold for FFT model is: 0.76824
+Added 80 new RGB-labeled samples to FFT dataset
+Added 23 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9496, FFT: 0.7783, Combined: 0.9395
+
+Epoch 13/20
+RGB dataset size: 7680, FFT dataset size: 7885
+Used unlabeled samples: 1903/1984
+Added 16 new RGB-labeled samples to FFT dataset
+Added 5 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9454, FFT: 0.7867, Combined: 0.9370
+
+Epoch 14/20
+RGB dataset size: 7685, FFT dataset size: 7901
+Used unlabeled samples: 1922/1984
+Added 23 new RGB-labeled samples to FFT dataset
+Added 17 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9437, FFT: 0.7128, Combined: 0.9379
+
+Epoch 15/20
+RGB dataset size: 7702, FFT dataset size: 7924
+Used unlabeled samples: 1956/1984
+Added 3 new RGB-labeled samples to FFT dataset
+Added 1 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9538, FFT: 0.8010, Combined: 0.9429
+
+Epoch 16/20
+RGB dataset size: 7703, FFT dataset size: 7927
+Used unlabeled samples: 1959/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 17
+Number of removed FFT samples is: 80
+The removal rate for RGB dataset: 0.085
+The removal rate for FFT dataset: 0.4
+The new confidence threshold for RGB model is: 0.85
+The new confidence threshold for FFT model is: 0.7451928
+Added 6 new RGB-labeled samples to FFT dataset
+Added 1 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9395, FFT: 0.7951, Combined: 0.9337
+
+Epoch 17/20
+RGB dataset size: 7687, FFT dataset size: 7853
+Used unlabeled samples: 1966/1984
+Added 5 new RGB-labeled samples to FFT dataset
+Validation Accuracy - RGB: 0.9454, FFT: 0.8052, Combined: 0.9429
+
+Epoch 18/20
+RGB dataset size: 7687, FFT dataset size: 7858
+Used unlabeled samples: 1971/1984
+Added 1 new RGB-labeled samples to FFT dataset
+Validation Accuracy - RGB: 0.9387, FFT: 0.8035, Combined: 0.9320
+
+Epoch 19/20
+RGB dataset size: 7687, FFT dataset size: 7859
+Used unlabeled samples: 1972/1984
+Added 7 new RGB-labeled samples to FFT dataset
+Validation Accuracy - RGB: 0.9320, FFT: 0.8002, Combined: 0.9278
+
+Epoch 20/20
+RGB dataset size: 7687, FFT dataset size: 7866
+Used unlabeled samples: 1979/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 7
+Number of removed FFT samples is: 65
+The removal rate for RGB dataset: 0.035
+The removal rate for FFT dataset: 0.325
+The new confidence threshold for RGB model is: 0.85
+The new confidence threshold for FFT model is: 0.7228370159999999
+Added 1 new RGB-labeled samples to FFT dataset
+Validation Accuracy - RGB: 0.9521, FFT: 0.8027, Combined: 0.9446
+
+Testing on test set...
+Test Accuracy - RGB: 0.9335, FFT: 0.7944, Combined: 0.9306
+Models saved: models/large_20_start5_rgb0.85_fft0.8_rgb.pth, models/large_20_start5_rgb0.85_fft0.8_fft.pth
+
+Final Statistics:
+RGB dataset final size: 7680 (original + pseudo-labels)
+FFT dataset final size: 7802 (original + pseudo-labels)
+Total unlabeled samples used: 1980/1984
+RGB pseudo-samples: 936
+FFT pseudo-samples: 1058
+
+
+================================================================================
+EXPERIMENT 4/9
+================================================================================
+
+================================================================================
+Starting Experiment: large_20_start7_rgb0.95_fft0.9
+Dataset: large_20 (20% unlabeled)
+Co-training starts: Epoch 7
+Thresholds - RGB: 0.95, FFT: 0.9
+================================================================================
+Using device: cuda
+Number of classes: 6
+Starting co-training...
+
+Epoch 1/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.8900, FFT: 0.5609, Combined: 0.8783
+
+Epoch 2/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9152, FFT: 0.6516, Combined: 0.9110
+
+Epoch 3/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9043, FFT: 0.6784, Combined: 0.9060
+
+Epoch 4/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9437, FFT: 0.7212, Combined: 0.9421
+
+Epoch 5/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9127, FFT: 0.7296, Combined: 0.9135
+
+Epoch 6/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9160, FFT: 0.7464, Combined: 0.9118
+
+Epoch 7/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9345, FFT: 0.7380, Combined: 0.9412
+
+Epoch 8/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 0
+Number of removed FFT samples is: 0
+The removal rate for RGB dataset: 0.0
+The removal rate for FFT dataset: 0.0
+The new confidence threshold for RGB model is: 0.95
+The new confidence threshold for FFT model is: 0.9
+Added 199 new RGB-labeled samples to FFT dataset
+Added 200 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9547, FFT: 0.7473, Combined: 0.9412
+
+Epoch 9/20
+RGB dataset size: 6944, FFT dataset size: 6943
+Used unlabeled samples: 349/1984
+Added 196 new RGB-labeled samples to FFT dataset
+Added 196 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9521, FFT: 0.7372, Combined: 0.9404
+
+Epoch 10/20
+RGB dataset size: 7140, FFT dataset size: 7139
+Used unlabeled samples: 692/1984
+Added 193 new RGB-labeled samples to FFT dataset
+Added 197 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9295, FFT: 0.7775, Combined: 0.9320
+
+Epoch 11/20
+RGB dataset size: 7337, FFT dataset size: 7332
+Used unlabeled samples: 1025/1984
+Added 197 new RGB-labeled samples to FFT dataset
+Added 122 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9379, FFT: 0.7641, Combined: 0.9278
+
+Epoch 12/20
+RGB dataset size: 7459, FFT dataset size: 7529
+Used unlabeled samples: 1324/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 12
+Number of removed FFT samples is: 94
+The removal rate for RGB dataset: 0.06
+The removal rate for FFT dataset: 0.47
+The new confidence threshold for RGB model is: 0.95
+The new confidence threshold for FFT model is: 0.873
+Added 196 new RGB-labeled samples to FFT dataset
+Added 50 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9169, FFT: 0.7834, Combined: 0.9110
+
+Epoch 13/20
+RGB dataset size: 7497, FFT dataset size: 7631
+Used unlabeled samples: 1554/1984
+Added 199 new RGB-labeled samples to FFT dataset
+Added 21 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9488, FFT: 0.7750, Combined: 0.9404
+
+Epoch 14/20
+RGB dataset size: 7518, FFT dataset size: 7830
+Used unlabeled samples: 1762/1984
+Added 89 new RGB-labeled samples to FFT dataset
+Added 27 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9437, FFT: 0.7557, Combined: 0.9320
+
+Epoch 15/20
+RGB dataset size: 7545, FFT dataset size: 7919
+Used unlabeled samples: 1872/1984
+Added 46 new RGB-labeled samples to FFT dataset
+Added 4 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9471, FFT: 0.7523, Combined: 0.9395
+
+Epoch 16/20
+RGB dataset size: 7549, FFT dataset size: 7965
+Used unlabeled samples: 1920/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 26
+Number of removed FFT samples is: 101
+The removal rate for RGB dataset: 0.13
+The removal rate for FFT dataset: 0.505
+The new confidence threshold for RGB model is: 0.9405
+The new confidence threshold for FFT model is: 0.8293499999999999
+Added 15 new RGB-labeled samples to FFT dataset
+Added 12 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9379, FFT: 0.7674, Combined: 0.9144
+
+Epoch 17/20
+RGB dataset size: 7535, FFT dataset size: 7879
+Used unlabeled samples: 1943/1984
+Added 14 new RGB-labeled samples to FFT dataset
+Added 3 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9513, FFT: 0.7792, Combined: 0.9463
+
+Epoch 18/20
+RGB dataset size: 7538, FFT dataset size: 7893
+Used unlabeled samples: 1959/1984
+Added 6 new RGB-labeled samples to FFT dataset
+Validation Accuracy - RGB: 0.9421, FFT: 0.7481, Combined: 0.9353
+
+Epoch 19/20
+RGB dataset size: 7538, FFT dataset size: 7899
+Used unlabeled samples: 1965/1984
+Added 4 new RGB-labeled samples to FFT dataset
+Validation Accuracy - RGB: 0.9572, FFT: 0.7993, Combined: 0.9530
+
+Epoch 20/20
+RGB dataset size: 7538, FFT dataset size: 7903
+Used unlabeled samples: 1969/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 10
+Number of removed FFT samples is: 96
+The removal rate for RGB dataset: 0.05
+The removal rate for FFT dataset: 0.48
+The new confidence threshold for RGB model is: 0.9405
+The new confidence threshold for FFT model is: 0.8044695
+Added 3 new RGB-labeled samples to FFT dataset
+Added 1 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9488, FFT: 0.7867, Combined: 0.9412
+
+Testing on test set...
+Test Accuracy - RGB: 0.9367, FFT: 0.7911, Combined: 0.9379
+Models saved: models/large_20_start7_rgb0.95_fft0.9_rgb.pth, models/large_20_start7_rgb0.95_fft0.9_fft.pth
+
+Final Statistics:
+RGB dataset final size: 7529 (original + pseudo-labels)
+FFT dataset final size: 7810 (original + pseudo-labels)
+Total unlabeled samples used: 1973/1984
+RGB pseudo-samples: 785
+FFT pseudo-samples: 1066
+
+
+================================================================================
+EXPERIMENT 5/9
+================================================================================
+
+================================================================================
+Starting Experiment: large_20_start7_rgb0.9_fft0.85
+Dataset: large_20 (20% unlabeled)
+Co-training starts: Epoch 7
+Thresholds - RGB: 0.9, FFT: 0.85
+================================================================================
+Using device: cuda
+Number of classes: 6
+Starting co-training...
+
+Epoch 1/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.8783, FFT: 0.5852, Combined: 0.8799
+
+Epoch 2/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9194, FFT: 0.6406, Combined: 0.9076
+
+Epoch 3/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9446, FFT: 0.6700, Combined: 0.9295
+
+Epoch 4/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9320, FFT: 0.7120, Combined: 0.9286
+
+Epoch 5/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9160, FFT: 0.7364, Combined: 0.9152
+
+Epoch 6/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9471, FFT: 0.7565, Combined: 0.9395
+
+Epoch 7/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9505, FFT: 0.7590, Combined: 0.9404
+
+Epoch 8/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 0
+Number of removed FFT samples is: 0
+The removal rate for RGB dataset: 0.0
+The removal rate for FFT dataset: 0.0
+The new confidence threshold for RGB model is: 0.9
+The new confidence threshold for FFT model is: 0.85
+Added 198 new RGB-labeled samples to FFT dataset
+Added 200 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9244, FFT: 0.7725, Combined: 0.9270
+
+Epoch 9/20
+RGB dataset size: 6944, FFT dataset size: 6942
+Used unlabeled samples: 323/1984
+Added 195 new RGB-labeled samples to FFT dataset
+Added 193 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9521, FFT: 0.7725, Combined: 0.9446
+
+Epoch 10/20
+RGB dataset size: 7137, FFT dataset size: 7137
+Used unlabeled samples: 656/1984
+Added 196 new RGB-labeled samples to FFT dataset
+Added 197 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9370, FFT: 0.7750, Combined: 0.9286
+
+Epoch 11/20
+RGB dataset size: 7334, FFT dataset size: 7333
+Used unlabeled samples: 988/1984
+Added 198 new RGB-labeled samples to FFT dataset
+Added 199 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9513, FFT: 0.7876, Combined: 0.9538
+
+Epoch 12/20
+RGB dataset size: 7533, FFT dataset size: 7531
+Used unlabeled samples: 1344/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 15
+Number of removed FFT samples is: 101
+The removal rate for RGB dataset: 0.075
+The removal rate for FFT dataset: 0.505
+The new confidence threshold for RGB model is: 0.9
+The new confidence threshold for FFT model is: 0.8075
+Added 195 new RGB-labeled samples to FFT dataset
+Added 173 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9538, FFT: 0.7229, Combined: 0.9454
+
+Epoch 13/20
+RGB dataset size: 7691, FFT dataset size: 7625
+Used unlabeled samples: 1684/1984
+Added 148 new RGB-labeled samples to FFT dataset
+Added 30 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9303, FFT: 0.7968, Combined: 0.9228
+
+Epoch 14/20
+RGB dataset size: 7721, FFT dataset size: 7773
+Used unlabeled samples: 1846/1984
+Added 76 new RGB-labeled samples to FFT dataset
+Added 21 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9555, FFT: 0.7767, Combined: 0.9505
+
+Epoch 15/20
+RGB dataset size: 7742, FFT dataset size: 7849
+Used unlabeled samples: 1935/1984
+Added 20 new RGB-labeled samples to FFT dataset
+Added 5 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9614, FFT: 0.8027, Combined: 0.9488
+
+Epoch 16/20
+RGB dataset size: 7747, FFT dataset size: 7869
+Used unlabeled samples: 1958/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 26
+Number of removed FFT samples is: 72
+The removal rate for RGB dataset: 0.13
+The removal rate for FFT dataset: 0.36
+The new confidence threshold for RGB model is: 0.891
+The new confidence threshold for FFT model is: 0.7832749999999999
+Added 7 new RGB-labeled samples to FFT dataset
+Added 3 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9589, FFT: 0.8044, Combined: 0.9437
+
+Epoch 17/20
+RGB dataset size: 7724, FFT dataset size: 7804
+Used unlabeled samples: 1967/1984
+Added 1 new RGB-labeled samples to FFT dataset
+Validation Accuracy - RGB: 0.9639, FFT: 0.8153, Combined: 0.9538
+
+Epoch 18/20
+RGB dataset size: 7724, FFT dataset size: 7805
+Used unlabeled samples: 1968/1984
+Added 5 new RGB-labeled samples to FFT dataset
+Added 4 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9446, FFT: 0.7531, Combined: 0.9471
+
+Epoch 19/20
+RGB dataset size: 7728, FFT dataset size: 7810
+Used unlabeled samples: 1974/1984
+Added 3 new RGB-labeled samples to FFT dataset
+Validation Accuracy - RGB: 0.9521, FFT: 0.8052, Combined: 0.9454
+
+Epoch 20/20
+RGB dataset size: 7728, FFT dataset size: 7813
+Used unlabeled samples: 1977/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 31
+Number of removed FFT samples is: 85
+The removal rate for RGB dataset: 0.155
+The removal rate for FFT dataset: 0.425
+The new confidence threshold for RGB model is: 0.88209
+The new confidence threshold for FFT model is: 0.7597767499999999
+Added 2 new RGB-labeled samples to FFT dataset
+Added 1 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9530, FFT: 0.7918, Combined: 0.9530
+
+Testing on test set...
+Test Accuracy - RGB: 0.9290, FFT: 0.7891, Combined: 0.9323
+Models saved: models/large_20_start7_rgb0.9_fft0.85_rgb.pth, models/large_20_start7_rgb0.9_fft0.85_fft.pth
+
+Final Statistics:
+RGB dataset final size: 7698 (original + pseudo-labels)
+FFT dataset final size: 7730 (original + pseudo-labels)
+Total unlabeled samples used: 1980/1984
+RGB pseudo-samples: 954
+FFT pseudo-samples: 986
+
+
+================================================================================
+EXPERIMENT 6/9
+================================================================================
+
+================================================================================
+Starting Experiment: large_20_start7_rgb0.85_fft0.8
+Dataset: large_20 (20% unlabeled)
+Co-training starts: Epoch 7
+Thresholds - RGB: 0.85, FFT: 0.8
+================================================================================
+Using device: cuda
+Number of classes: 6
+Starting co-training...
+
+Epoch 1/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9286, FFT: 0.5751, Combined: 0.9127
+
+Epoch 2/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9312, FFT: 0.6423, Combined: 0.9169
+
+Epoch 3/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9270, FFT: 0.6625, Combined: 0.9102
+
+Epoch 4/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9437, FFT: 0.6961, Combined: 0.9387
+
+Epoch 5/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9471, FFT: 0.6927, Combined: 0.9362
+
+Epoch 6/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9202, FFT: 0.7322, Combined: 0.9202
+
+Epoch 7/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9219, FFT: 0.7288, Combined: 0.9152
+
+Epoch 8/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 0
+Number of removed FFT samples is: 0
+The removal rate for RGB dataset: 0.0
+The removal rate for FFT dataset: 0.0
+The new confidence threshold for RGB model is: 0.85
+The new confidence threshold for FFT model is: 0.8
+Added 198 new RGB-labeled samples to FFT dataset
+Added 197 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9505, FFT: 0.7565, Combined: 0.9471
+
+Epoch 9/20
+RGB dataset size: 6941, FFT dataset size: 6942
+Used unlabeled samples: 307/1984
+Added 196 new RGB-labeled samples to FFT dataset
+Added 197 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9605, FFT: 0.7573, Combined: 0.9471
+
+Epoch 10/20
+RGB dataset size: 7138, FFT dataset size: 7138
+Used unlabeled samples: 641/1984
+Added 197 new RGB-labeled samples to FFT dataset
+Added 198 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9521, FFT: 0.7683, Combined: 0.9479
+
+Epoch 11/20
+RGB dataset size: 7336, FFT dataset size: 7335
+Used unlabeled samples: 961/1984
+Added 199 new RGB-labeled samples to FFT dataset
+Added 198 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9446, FFT: 0.7641, Combined: 0.9395
+
+Epoch 12/20
+RGB dataset size: 7534, FFT dataset size: 7534
+Used unlabeled samples: 1298/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 16
+Number of removed FFT samples is: 76
+The removal rate for RGB dataset: 0.08
+The removal rate for FFT dataset: 0.38
+The new confidence threshold for RGB model is: 0.85
+The new confidence threshold for FFT model is: 0.776
+Added 195 new RGB-labeled samples to FFT dataset
+Added 159 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9496, FFT: 0.7691, Combined: 0.9454
+
+Epoch 13/20
+RGB dataset size: 7677, FFT dataset size: 7653
+Used unlabeled samples: 1595/1984
+Added 197 new RGB-labeled samples to FFT dataset
+Added 38 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9421, FFT: 0.7725, Combined: 0.9353
+
+Epoch 14/20
+RGB dataset size: 7715, FFT dataset size: 7850
+Used unlabeled samples: 1819/1984
+Added 101 new RGB-labeled samples to FFT dataset
+Added 38 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9446, FFT: 0.7859, Combined: 0.9395
+
+Epoch 15/20
+RGB dataset size: 7753, FFT dataset size: 7951
+Used unlabeled samples: 1936/1984
+Added 30 new RGB-labeled samples to FFT dataset
+Validation Accuracy - RGB: 0.9429, FFT: 0.7599, Combined: 0.9387
+
+Epoch 16/20
+RGB dataset size: 7753, FFT dataset size: 7981
+Used unlabeled samples: 1966/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 14
+Number of removed FFT samples is: 79
+The removal rate for RGB dataset: 0.07
+The removal rate for FFT dataset: 0.395
+The new confidence threshold for RGB model is: 0.85
+The new confidence threshold for FFT model is: 0.7527200000000001
+Added 11 new RGB-labeled samples to FFT dataset
+Validation Accuracy - RGB: 0.9345, FFT: 0.8018, Combined: 0.9244
+
+Epoch 17/20
+RGB dataset size: 7739, FFT dataset size: 7913
+Used unlabeled samples: 1977/1984
+Added 2 new RGB-labeled samples to FFT dataset
+Validation Accuracy - RGB: 0.9270, FFT: 0.7993, Combined: 0.9228
+
+Epoch 18/20
+RGB dataset size: 7739, FFT dataset size: 7915
+Used unlabeled samples: 1979/1984
+Added 1 new RGB-labeled samples to FFT dataset
+Validation Accuracy - RGB: 0.9513, FFT: 0.7893, Combined: 0.9429
+
+Epoch 19/20
+RGB dataset size: 7739, FFT dataset size: 7916
+Used unlabeled samples: 1980/1984
+Added 1 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9513, FFT: 0.7968, Combined: 0.9437
+
+Epoch 20/20
+RGB dataset size: 7740, FFT dataset size: 7916
+Used unlabeled samples: 1981/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 6
+Number of removed FFT samples is: 81
+The removal rate for RGB dataset: 0.03
+The removal rate for FFT dataset: 0.405
+The new confidence threshold for RGB model is: 0.85
+The new confidence threshold for FFT model is: 0.7301384000000001
+Added 1 new RGB-labeled samples to FFT dataset
+Validation Accuracy - RGB: 0.9538, FFT: 0.8111, Combined: 0.9454
+
+Testing on test set...
+Test Accuracy - RGB: 0.9399, FFT: 0.8012, Combined: 0.9383
+Models saved: models/large_20_start7_rgb0.85_fft0.8_rgb.pth, models/large_20_start7_rgb0.85_fft0.8_fft.pth
+
+Final Statistics:
+RGB dataset final size: 7734 (original + pseudo-labels)
+FFT dataset final size: 7836 (original + pseudo-labels)
+Total unlabeled samples used: 1982/1984
+RGB pseudo-samples: 990
+FFT pseudo-samples: 1092
+
+
+================================================================================
+EXPERIMENT 7/9
+================================================================================
+
+================================================================================
+Starting Experiment: large_20_start10_rgb0.95_fft0.9
+Dataset: large_20 (20% unlabeled)
+Co-training starts: Epoch 10
+Thresholds - RGB: 0.95, FFT: 0.9
+================================================================================
+Using device: cuda
+Number of classes: 6
+Starting co-training...
+
+Epoch 1/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.8917, FFT: 0.6432, Combined: 0.8774
+
+Epoch 2/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9085, FFT: 0.6969, Combined: 0.8892
+
+Epoch 3/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9286, FFT: 0.7187, Combined: 0.9228
+
+Epoch 4/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9362, FFT: 0.7439, Combined: 0.9320
+
+Epoch 5/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9320, FFT: 0.7431, Combined: 0.9261
+
+Epoch 6/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9437, FFT: 0.7313, Combined: 0.9253
+
+Epoch 7/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9437, FFT: 0.7641, Combined: 0.9379
+
+Epoch 8/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9555, FFT: 0.7531, Combined: 0.9463
+
+Epoch 9/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.8858, FFT: 0.7926, Combined: 0.8984
+
+Epoch 10/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9454, FFT: 0.7741, Combined: 0.9362
+
+Epoch 11/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Added 200 new RGB-labeled samples to FFT dataset
+Added 198 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9479, FFT: 0.7926, Combined: 0.9454
+
+Epoch 12/20
+RGB dataset size: 6942, FFT dataset size: 6944
+Used unlabeled samples: 303/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 0
+Number of removed FFT samples is: 35
+The removal rate for RGB dataset: 0.0
+The removal rate for FFT dataset: 0.175
+The new confidence threshold for RGB model is: 0.95
+The new confidence threshold for FFT model is: 0.891
+Added 194 new RGB-labeled samples to FFT dataset
+Added 194 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9572, FFT: 0.7683, Combined: 0.9463
+
+Epoch 13/20
+RGB dataset size: 7136, FFT dataset size: 7103
+Used unlabeled samples: 648/1984
+Added 194 new RGB-labeled samples to FFT dataset
+Added 191 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9228, FFT: 0.7809, Combined: 0.9144
+
+Epoch 14/20
+RGB dataset size: 7327, FFT dataset size: 7297
+Used unlabeled samples: 970/1984
+Added 199 new RGB-labeled samples to FFT dataset
+Added 180 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9521, FFT: 0.7758, Combined: 0.9429
+
+Epoch 15/20
+RGB dataset size: 7507, FFT dataset size: 7496
+Used unlabeled samples: 1277/1984
+Added 199 new RGB-labeled samples to FFT dataset
+Added 100 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9471, FFT: 0.8128, Combined: 0.9437
+
+Epoch 16/20
+RGB dataset size: 7607, FFT dataset size: 7695
+Used unlabeled samples: 1543/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 10
+Number of removed FFT samples is: 87
+The removal rate for RGB dataset: 0.05
+The removal rate for FFT dataset: 0.435
+The new confidence threshold for RGB model is: 0.95
+The new confidence threshold for FFT model is: 0.86427
+Added 198 new RGB-labeled samples to FFT dataset
+Added 37 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9530, FFT: 0.8010, Combined: 0.9471
+
+Epoch 17/20
+RGB dataset size: 7634, FFT dataset size: 7806
+Used unlabeled samples: 1760/1984
+Added 109 new RGB-labeled samples to FFT dataset
+Added 16 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9295, FFT: 0.8002, Combined: 0.9278
+
+Epoch 18/20
+RGB dataset size: 7650, FFT dataset size: 7915
+Used unlabeled samples: 1872/1984
+Added 29 new RGB-labeled samples to FFT dataset
+Added 6 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9395, FFT: 0.8144, Combined: 0.9345
+
+Epoch 19/20
+RGB dataset size: 7656, FFT dataset size: 7944
+Used unlabeled samples: 1907/1984
+Added 27 new RGB-labeled samples to FFT dataset
+Added 14 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9521, FFT: 0.7531, Combined: 0.9437
+
+Epoch 20/20
+RGB dataset size: 7670, FFT dataset size: 7971
+Used unlabeled samples: 1942/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 12
+Number of removed FFT samples is: 111
+The removal rate for RGB dataset: 0.06
+The removal rate for FFT dataset: 0.555
+The new confidence threshold for RGB model is: 0.95
+The new confidence threshold for FFT model is: 0.8210565
+Added 11 new RGB-labeled samples to FFT dataset
+Added 2 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9555, FFT: 0.7951, Combined: 0.9538
+
+Testing on test set...
+Test Accuracy - RGB: 0.9399, FFT: 0.8024, Combined: 0.9399
+Models saved: models/large_20_start10_rgb0.95_fft0.9_rgb.pth, models/large_20_start10_rgb0.95_fft0.9_fft.pth
+
+Final Statistics:
+RGB dataset final size: 7660 (original + pseudo-labels)
+FFT dataset final size: 7871 (original + pseudo-labels)
+Total unlabeled samples used: 1955/1984
+RGB pseudo-samples: 916
+FFT pseudo-samples: 1127
+
+
+================================================================================
+EXPERIMENT 8/9
+================================================================================
+
+================================================================================
+Starting Experiment: large_20_start10_rgb0.9_fft0.85
+Dataset: large_20 (20% unlabeled)
+Co-training starts: Epoch 10
+Thresholds - RGB: 0.9, FFT: 0.85
+================================================================================
+Using device: cuda
+Number of classes: 6
+Starting co-training...
+
+Epoch 1/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.8967, FFT: 0.5894, Combined: 0.8766
+
+Epoch 2/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9202, FFT: 0.6583, Combined: 0.9102
+
+Epoch 3/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9370, FFT: 0.6835, Combined: 0.9270
+
+Epoch 4/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9429, FFT: 0.7086, Combined: 0.9303
+
+Epoch 5/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9337, FFT: 0.7422, Combined: 0.9328
+
+Epoch 6/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9488, FFT: 0.7565, Combined: 0.9421
+
+Epoch 7/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9530, FFT: 0.7137, Combined: 0.9395
+
+Epoch 8/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9312, FFT: 0.7582, Combined: 0.9177
+
+Epoch 9/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9337, FFT: 0.7422, Combined: 0.9253
+
+Epoch 10/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9412, FFT: 0.7573, Combined: 0.9362
+
+Epoch 11/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Added 200 new RGB-labeled samples to FFT dataset
+Added 200 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9513, FFT: 0.7599, Combined: 0.9446
+
+Epoch 12/20
+RGB dataset size: 6944, FFT dataset size: 6944
+Used unlabeled samples: 272/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 0
+Number of removed FFT samples is: 10
+The removal rate for RGB dataset: 0.0
+The removal rate for FFT dataset: 0.05
+The new confidence threshold for RGB model is: 0.9
+The new confidence threshold for FFT model is: 0.85
+Added 192 new RGB-labeled samples to FFT dataset
+Added 191 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9454, FFT: 0.7741, Combined: 0.9379
+
+Epoch 13/20
+RGB dataset size: 7135, FFT dataset size: 7126
+Used unlabeled samples: 597/1984
+Added 197 new RGB-labeled samples to FFT dataset
+Added 196 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9454, FFT: 0.7792, Combined: 0.9463
+
+Epoch 14/20
+RGB dataset size: 7331, FFT dataset size: 7323
+Used unlabeled samples: 932/1984
+Added 194 new RGB-labeled samples to FFT dataset
+Added 197 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9034, FFT: 0.7649, Combined: 0.9085
+
+Epoch 15/20
+RGB dataset size: 7528, FFT dataset size: 7517
+Used unlabeled samples: 1273/1984
+Added 199 new RGB-labeled samples to FFT dataset
+Added 93 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9463, FFT: 0.7859, Combined: 0.9412
+
+Epoch 16/20
+RGB dataset size: 7621, FFT dataset size: 7716
+Used unlabeled samples: 1529/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 13
+Number of removed FFT samples is: 79
+The removal rate for RGB dataset: 0.065
+The removal rate for FFT dataset: 0.395
+The new confidence threshold for RGB model is: 0.9
+The new confidence threshold for FFT model is: 0.8245
+Added 195 new RGB-labeled samples to FFT dataset
+Added 85 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9555, FFT: 0.7851, Combined: 0.9446
+
+Epoch 17/20
+RGB dataset size: 7693, FFT dataset size: 7832
+Used unlabeled samples: 1764/1984
+Added 103 new RGB-labeled samples to FFT dataset
+Added 62 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9437, FFT: 0.7767, Combined: 0.9538
+
+Epoch 18/20
+RGB dataset size: 7755, FFT dataset size: 7935
+Used unlabeled samples: 1905/1984
+Added 28 new RGB-labeled samples to FFT dataset
+Added 7 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9496, FFT: 0.7976, Combined: 0.9395
+
+Epoch 19/20
+RGB dataset size: 7762, FFT dataset size: 7963
+Used unlabeled samples: 1937/1984
+Added 14 new RGB-labeled samples to FFT dataset
+Validation Accuracy - RGB: 0.9614, FFT: 0.8069, Combined: 0.9555
+
+Epoch 20/20
+RGB dataset size: 7762, FFT dataset size: 7977
+Used unlabeled samples: 1951/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 18
+Number of removed FFT samples is: 96
+The removal rate for RGB dataset: 0.09
+The removal rate for FFT dataset: 0.48
+The new confidence threshold for RGB model is: 0.9
+The new confidence threshold for FFT model is: 0.799765
+Added 11 new RGB-labeled samples to FFT dataset
+Added 1 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9572, FFT: 0.7859, Combined: 0.9530
+
+Testing on test set...
+Test Accuracy - RGB: 0.9367, FFT: 0.7899, Combined: 0.9371
+Models saved: models/large_20_start10_rgb0.9_fft0.85_rgb.pth, models/large_20_start10_rgb0.9_fft0.85_fft.pth
+
+Final Statistics:
+RGB dataset final size: 7745 (original + pseudo-labels)
+FFT dataset final size: 7892 (original + pseudo-labels)
+Total unlabeled samples used: 1962/1984
+RGB pseudo-samples: 1001
+FFT pseudo-samples: 1148
+
+
+================================================================================
+EXPERIMENT 9/9
+================================================================================
+
+================================================================================
+Starting Experiment: large_20_start10_rgb0.85_fft0.8
+Dataset: large_20 (20% unlabeled)
+Co-training starts: Epoch 10
+Thresholds - RGB: 0.85, FFT: 0.8
+================================================================================
+Using device: cuda
+Number of classes: 6
+Starting co-training...
+
+Epoch 1/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.8900, FFT: 0.6188, Combined: 0.8665
+
+Epoch 2/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9211, FFT: 0.6969, Combined: 0.9127
+
+Epoch 3/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9379, FFT: 0.7280, Combined: 0.9219
+
+Epoch 4/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9135, FFT: 0.7330, Combined: 0.9051
+
+Epoch 5/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9437, FFT: 0.7506, Combined: 0.9479
+
+Epoch 6/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9505, FFT: 0.7607, Combined: 0.9437
+
+Epoch 7/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9102, FFT: 0.7741, Combined: 0.9152
+
+Epoch 8/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9488, FFT: 0.7683, Combined: 0.9404
+
+Epoch 9/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9589, FFT: 0.7624, Combined: 0.9488
+
+Epoch 10/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Validation Accuracy - RGB: 0.9521, FFT: 0.7817, Combined: 0.9521
+
+Epoch 11/20
+RGB dataset size: 6744, FFT dataset size: 6744
+Used unlabeled samples: 0/1984
+Added 200 new RGB-labeled samples to FFT dataset
+Added 199 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9563, FFT: 0.7884, Combined: 0.9538
+
+Epoch 12/20
+RGB dataset size: 6943, FFT dataset size: 6944
+Used unlabeled samples: 258/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 0
+Number of removed FFT samples is: 3
+The removal rate for RGB dataset: 0.0
+The removal rate for FFT dataset: 0.015
+The new confidence threshold for RGB model is: 0.85
+The new confidence threshold for FFT model is: 0.8
+Added 194 new RGB-labeled samples to FFT dataset
+Added 194 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9152, FFT: 0.7783, Combined: 0.9135
+
+Epoch 13/20
+RGB dataset size: 7137, FFT dataset size: 7135
+Used unlabeled samples: 588/1984
+Added 199 new RGB-labeled samples to FFT dataset
+Added 197 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9555, FFT: 0.7817, Combined: 0.9496
+
+Epoch 14/20
+RGB dataset size: 7334, FFT dataset size: 7334
+Used unlabeled samples: 929/1984
+Added 197 new RGB-labeled samples to FFT dataset
+Added 197 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9471, FFT: 0.7531, Combined: 0.9295
+
+Epoch 15/20
+RGB dataset size: 7531, FFT dataset size: 7531
+Used unlabeled samples: 1271/1984
+Added 197 new RGB-labeled samples to FFT dataset
+Added 131 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9572, FFT: 0.7347, Combined: 0.9496
+
+Epoch 16/20
+RGB dataset size: 7662, FFT dataset size: 7728
+Used unlabeled samples: 1565/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 28
+Number of removed FFT samples is: 57
+The removal rate for RGB dataset: 0.14
+The removal rate for FFT dataset: 0.285
+The new confidence threshold for RGB model is: 0.8415
+The new confidence threshold for FFT model is: 0.792
+Added 196 new RGB-labeled samples to FFT dataset
+Added 89 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9337, FFT: 0.7817, Combined: 0.9244
+
+Epoch 17/20
+RGB dataset size: 7723, FFT dataset size: 7867
+Used unlabeled samples: 1793/1984
+Added 106 new RGB-labeled samples to FFT dataset
+Added 37 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9563, FFT: 0.7951, Combined: 0.9421
+
+Epoch 18/20
+RGB dataset size: 7760, FFT dataset size: 7973
+Used unlabeled samples: 1910/1984
+Added 23 new RGB-labeled samples to FFT dataset
+Added 3 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9513, FFT: 0.7783, Combined: 0.9345
+
+Epoch 19/20
+RGB dataset size: 7763, FFT dataset size: 7996
+Used unlabeled samples: 1936/1984
+Added 12 new RGB-labeled samples to FFT dataset
+Added 5 new FFT-labeled samples to RGB dataset
+Validation Accuracy - RGB: 0.9631, FFT: 0.8002, Combined: 0.9471
+
+Epoch 20/20
+RGB dataset size: 7768, FFT dataset size: 8008
+Used unlabeled samples: 1952/1984
+Reevaluation is being performed on this iteration
+Number of removed RGB samples is: 23
+Number of removed FFT samples is: 76
+The removal rate for RGB dataset: 0.115
+The removal rate for FFT dataset: 0.38
+The new confidence threshold for RGB model is: 0.833085
+The new confidence threshold for FFT model is: 0.76824
+Added 12 new RGB-labeled samples to FFT dataset
+Validation Accuracy - RGB: 0.9295, FFT: 0.8002, Combined: 0.9286
+
+Testing on test set...
+Test Accuracy - RGB: 0.9254, FFT: 0.7984, Combined: 0.9206
+Models saved: models/large_20_start10_rgb0.85_fft0.8_rgb.pth, models/large_20_start10_rgb0.85_fft0.8_fft.pth
+
+Final Statistics:
+RGB dataset final size: 7745 (original + pseudo-labels)
+FFT dataset final size: 7944 (original + pseudo-labels)
+Total unlabeled samples used: 1964/1984
+RGB pseudo-samples: 1001
+FFT pseudo-samples: 1200
+
+
+================================================================================
+ALL EXPERIMENTS COMPLETED
+Total successful experiments: 9/9
+Results saved to experiment_results.csv
+================================================================================
+
+D:\Facultate\Disertatie\mainProject\pythonProject1>
+D:\Facultate\Disertatie\mainProject\pythonProject1>

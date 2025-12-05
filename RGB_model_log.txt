@@ -1,0 +1,105 @@
+C:\Users\Robert\AppData\Local\Programs\Python\Python311\python.exe "C:/Program Files/JetBrains/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/pydev/pydevconsole.py" --mode=client --host=127.0.0.1 --port=50345 
+import sys; print('Python %s on %s' % (sys.version, sys.platform))
+sys.path.extend(['D:\\Facultate\\Disertatie\\mainProject\\pythonProject1'])
+Python 3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 9.0.2 -- An enhanced Interactive Python. Type '?' for help.
+Tip: Use `ipython --help-all | less` to view all the IPython configurations options.
+PyDev console: using IPython 9.0.2
+Python 3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)] on win32
+runfile('D:\\Facultate\\Disertatie\\mainProject\\pythonProject1\\main.py', wdir='D:\\Facultate\\Disertatie\\mainProject\\pythonProject1')
+Program starting...
+=== Experiment 1 (50% labeled) ===
+Database loaded...
+C:\Users\Robert\AppData\Local\Programs\Python\Python311\Lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=SqueezeNet1_1_Weights.IMAGENET1K_V1`. You can also use `weights=SqueezeNet1_1_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using device: cuda
+Starting training...
+Epoch 1/20 - Loss: 0.7822
+Epoch 2/20 - Loss: 0.3806
+Epoch 3/20 - Loss: 0.2998
+Epoch 4/20 - Loss: 0.2497
+Epoch 5/20 - Loss: 0.2336
+Epoch 6/20 - Loss: 0.2179
+Epoch 7/20 - Loss: 0.1791
+Epoch 8/20 - Loss: 0.1876
+Epoch 9/20 - Loss: 0.1423
+Epoch 10/20 - Loss: 0.1326
+Epoch 11/20 - Loss: 0.1307
+Epoch 12/20 - Loss: 0.1429
+Epoch 13/20 - Loss: 0.1283
+Epoch 14/20 - Loss: 0.1180
+Epoch 15/20 - Loss: 0.1074
+Epoch 16/20 - Loss: 0.0958
+Epoch 17/20 - Loss: 0.1089
+Epoch 18/20 - Loss: 0.0977
+Epoch 19/20 - Loss: 0.1004
+Epoch 20/20 - Loss: 0.0960
+Model saved: ../../mainProject/pythonProject1/rezCNNsqueezenetFilteredOrganized.pth
+Evaluating validation...
+Validation accuracy: 0.9130434782608695
+Evaluating test...
+Test accuracy: 0.9088709677419354
+=== Experiment 2 (80% labeled) ===
+Database loaded...
+C:\Users\Robert\AppData\Local\Programs\Python\Python311\Lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=SqueezeNet1_1_Weights.IMAGENET1K_V1`. You can also use `weights=SqueezeNet1_1_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using device: cuda
+Starting training...
+Epoch 1/20 - Loss: 0.6300
+Epoch 2/20 - Loss: 0.3591
+Epoch 3/20 - Loss: 0.2812
+Epoch 4/20 - Loss: 0.2456
+Epoch 5/20 - Loss: 0.2159
+Epoch 6/20 - Loss: 0.1847
+Epoch 7/20 - Loss: 0.1906
+Epoch 8/20 - Loss: 0.1618
+Epoch 9/20 - Loss: 0.1607
+Epoch 10/20 - Loss: 0.1580
+Epoch 11/20 - Loss: 0.1467
+Epoch 12/20 - Loss: 0.1395
+Epoch 13/20 - Loss: 0.1416
+Epoch 14/20 - Loss: 0.1373
+Epoch 15/20 - Loss: 0.1280
+Epoch 16/20 - Loss: 0.1558
+Epoch 17/20 - Loss: 0.1490
+Epoch 18/20 - Loss: 0.1327
+Epoch 19/20 - Loss: 0.1325
+Epoch 20/20 - Loss: 0.1494
+Model saved: ../../mainProject/pythonProject1/rezCNNsqueezenetFilteredLarge.pth
+Evaluating validation...
+Validation accuracy: 0.9253952569169961
+Evaluating test...
+Test accuracy: 0.9205645161290322
+=== Experiment 3 (20% labeled) ===
+Database loaded...
+C:\Users\Robert\AppData\Local\Programs\Python\Python311\Lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=SqueezeNet1_1_Weights.IMAGENET1K_V1`. You can also use `weights=SqueezeNet1_1_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using device: cuda
+Starting training...
+Epoch 1/20 - Loss: 1.1521
+Epoch 2/20 - Loss: 0.5789
+Epoch 3/20 - Loss: 0.4872
+Epoch 4/20 - Loss: 0.3492
+Epoch 5/20 - Loss: 0.3152
+Epoch 6/20 - Loss: 0.2499
+Epoch 7/20 - Loss: 0.1957
+Epoch 8/20 - Loss: 0.1556
+Epoch 9/20 - Loss: 0.1424
+Epoch 10/20 - Loss: 0.1482
+Epoch 11/20 - Loss: 0.1324
+Epoch 12/20 - Loss: 0.0815
+Epoch 13/20 - Loss: 0.1269
+Epoch 14/20 - Loss: 0.0529
+Epoch 15/20 - Loss: 0.0735
+Epoch 16/20 - Loss: 0.0677
+Epoch 17/20 - Loss: 0.0704
+Epoch 18/20 - Loss: 0.0657
+Epoch 19/20 - Loss: 0.0476
+Epoch 20/20 - Loss: 0.0379
+Model saved: ../../mainProject/pythonProject1/rezCNNsqueezenetFilteredSmall.pth
+Evaluating validation...
+Validation accuracy: 0.9150197628458498
+Evaluating test...
+Test accuracy: 0.9129032258064517
+=== RESULTS SAVED TO cnn_results.xlsx ===
