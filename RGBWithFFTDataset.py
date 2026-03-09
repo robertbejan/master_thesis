@@ -9,15 +9,18 @@ import hashlib
 
 
 def compute_sample_hash(rgb_tensor, fft_tensor, label):
-    """Compute a hash value for a sample to detect duplicates"""
+    """
+    Compute a hash value for a sample to detect duplicates
+    """
     rgb_hash = hashlib.md5(rgb_tensor.cpu().numpy().tobytes()).hexdigest()[:8]
     fft_hash = hashlib.md5(fft_tensor.cpu().numpy().tobytes()).hexdigest()[:8]
     return f"{rgb_hash}_{fft_hash}_{label}"
 
 
 class RGBWithFFTDataset(Dataset):
-    """Dataset that loads RGB images and computes FFT"""
-
+    """
+    Dataset that loads RGB images and computes FFT
+    """
     def __init__(self, root_dir, rgb_transform=None, fft_transform=None, labeled=True):
         self.root_dir = root_dir
         self.rgb_transform = rgb_transform
@@ -93,9 +96,20 @@ class RGBWithFFTDataset(Dataset):
 
         return removed_count
     def __len__(self):
+        """
+        Determines the length of the whole dataset, including labeled/pseudo-labeled samples.
+        :return:
+        """
         return len(self.samples) + len(self.pseudo_samples)
 
     def __getitem__(self, idx):
+        """
+        This method loads and applies transformations to the samples. The spatial images are transformed into Gray scale
+        images and FFT domain samples. The latter ones, are transformed using the log of the magnitude and normalized
+        accordingly for the SqueezeNet backbone.
+        :param idx:
+        :return:
+        """
         # Check if we're accessing a pseudo-sample or regular sample
         if idx < len(self.samples):
             path, label = self.samples[idx]
@@ -118,7 +132,6 @@ class RGBWithFFTDataset(Dataset):
         f_shifted = torch.fft.fftshift(f_complex)
 
         # Calculate Magnitude and apply Log-Scale (The "Magic" Step)
-        # We add 1 to avoid log(0)
         fft_magnitude = torch.abs(f_shifted)
         fft_log = torch.log1p(fft_magnitude)
 

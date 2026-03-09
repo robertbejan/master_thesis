@@ -22,10 +22,9 @@ def reorganize_dataset(source_dir, target_dir, test_ratio=0.2):
     """
     Reorganize dataset with fewer classes and split into train/test only
 
-    Args:
-        source_dir: Directory containing original class folders
-        target_dir: Directory where reorganized dataset will be saved
-        test_ratio: Proportion of data for test set (default 20%)
+    :param source_dir: Directory containing original class folders
+    :param target_dir: Directory where reorganized dataset will be saved
+    :param test_ratio: Proportion of data for test set (default 20%)
     """
     class_map = create_class_mapping()
     os.makedirs(target_dir, exist_ok=True)

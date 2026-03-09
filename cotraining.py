@@ -48,8 +48,12 @@ databases, and a flag that indicates whether the object contains labeled/unlabel
 - evaluates the models
 """
 
+
 # Parameters and setup
 class ExperimentConfig:
+    """
+    This class contains the configurations necessary for the training.
+    """
     def __init__(self, dataset_type, cotraining_start, conf_rgb, conf_fft):
         self.dataset_type = dataset_type
         self.cotraining_start = cotraining_start
@@ -66,22 +70,22 @@ class ExperimentConfig:
         self.cotraining_batch_size = 50
 
         # Dataset mapping
+        # Modify when needed
         dataset_map = {
-            # "small_80": {
-            #     "base": "small_labeled_ultrasound_dataset",
-            #     "unlabeled_pct": 80
-            # }
+            "small_80": {
+                "base": "small_labeled_ultrasound_dataset",
+                "unlabeled_pct": 80
+            }
             # "organized_50": {
             #     "base": "organized_labeled_ultrasound_dataset",
             #     "unlabeled_pct": 50
             # },
-            "large_20": {
-                "base": "large_labeled_ultrasound_dataset",
-                "unlabeled_pct": 20
-            }
+            # "large_20": {
+            #     "base": "large_labeled_ultrasound_dataset",
+            #     "unlabeled_pct": 20
+            # }
         }
 
-        # Set paths
         base_path = "D:/Facultate/Disertatie/mainProject/pythonProject1/"
         dataset_info = dataset_map[dataset_type]
 
@@ -95,6 +99,12 @@ class ExperimentConfig:
 
 
 def initialize_rgb_model(num_classes, device):
+    """
+    This function initializes the Gray (RGB) model backbone of SqueezeNet with IMAGENET weights.
+    :param num_classes: The number of classes
+    :param device: The device on which the model will be trained
+    :return: The final model
+    """
     model_rgb = models.squeezenet1_1(weights=SqueezeNet1_1_Weights.IMAGENET1K_V1)
     model_rgb.classifier[1] = nn.Conv2d(model_rgb.classifier[1].in_channels, num_classes, kernel_size=1)
     model_rgb.num_classes = num_classes
@@ -103,6 +113,12 @@ def initialize_rgb_model(num_classes, device):
 
 
 def initialize_fft_model(num_classes, device):
+    """
+    This function initializes the FFT model backbone of SqueezeNet with IMAGENET weights.
+    :param num_classes: The number of classes
+    :param device: The device on which the model will be trained
+    :return: The final model
+    """
     model_fft = models.squeezenet1_1(weights=SqueezeNet1_1_Weights.IMAGENET1K_V1)
     new_layer = nn.Conv2d(1, 64, kernel_size=3, stride=2)
     pre_trained_weights = model_fft.features[0].weight.data
@@ -115,6 +131,16 @@ def initialize_fft_model(num_classes, device):
 
 
 def create_loaders(rgb_data, fft_data, unlabeled_data, val_data, test_data, batch_size):
+    """
+    This function creates the Dataloaders for all datasets (training, validation and test)
+    :param rgb_data: Gray Dataloader
+    :param fft_data: FFT Dataloader
+    :param unlabeled_data: Unlabeled Dataloader
+    :param val_data: Validation Dataloader
+    :param test_data: Test Dataloader
+    :param batch_size: Mini-batch size
+    :return: Returns the Dataloaders
+    """
     rgb_loader = DataLoader(rgb_data, batch_size=batch_size, shuffle=True)
     fft_loader = DataLoader(fft_data, batch_size=batch_size, shuffle=True)
     unlabeled_loader = DataLoader(unlabeled_data, batch_size=batch_size, shuffle=False)
@@ -124,6 +150,11 @@ def create_loaders(rgb_data, fft_data, unlabeled_data, val_data, test_data, batc
 
 
 def run_experiment(config):
+    """
+    This function performs the actual experiment
+    :param config: The configurations class with all options
+    :return: Returns the results in a dictionary
+    """
     print("=" * 80)
     print(f"Starting Experiment: {config.experiment_id}")
     print(f"Dataset: {config.dataset_type} ({config.unlabeled_pct}% unlabeled)")
@@ -261,7 +292,9 @@ def run_experiment(config):
 
 
 def save_results_to_csv(results_list, filename="large_20_experiment_results.csv"):
-    """Save or append results to CSV file"""
+    """
+    Save or append results to CSV file
+    """
     file_exists = os.path.isfile(filename)
 
     headers = [
@@ -284,10 +317,12 @@ def save_results_to_csv(results_list, filename="large_20_experiment_results.csv"
 
 
 def run_all_experiments():
-    """Run all experiment combinations"""
-    datasets = ["large_20"]
+    """
+    Run all experiment combinations
+    """
+    datasets = ["small_80"]
     # datasets = ["small_80", "organized_50", "large_20"]
-    cotraining_starts = [5] #, 7, 10]
+    cotraining_starts = [5]  # , 7, 10]
     threshold_configs = [
         {"rgb": 0.95, "fft": 0.90},  # High thresholds
         # {"rgb": 0.90, "fft": 0.85},  # Medium thresholds
@@ -336,7 +371,9 @@ def run_all_experiments():
 
 
 def run_single_experiment(dataset_type, cotraining_start, conf_rgb, conf_fft):
-    """Run a single experiment with specified parameters"""
+    """
+    Run a single experiment with specified parameters
+    """
     config = ExperimentConfig(dataset_type, cotraining_start, conf_rgb, conf_fft)
     results = run_experiment(config)
     save_results_to_csv([results])

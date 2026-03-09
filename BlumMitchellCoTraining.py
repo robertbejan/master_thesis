@@ -7,6 +7,10 @@ from torch.optim.lr_scheduler import StepLR
 
 
 class BlumMitchellCoTraining:
+    """
+    This class contains the LR schedulers, models, confidence thresholds, criterions and other information necessary
+    to perform a full training of a CoTraining model.
+    """
     def __init__(self, model_rgb, model_fft, num_classes, device, checked_number, cotraining_start, k=30,
                  confidence_thresh_fft=0.95,
                  confidence_thresh_rgb=0.9):
@@ -105,6 +109,17 @@ class BlumMitchellCoTraining:
         # return self.evaluate(labeled_loader)
 
     def train_on_labeled(self, rgb_loader, fft_loader, optimizer_rgb, optimizer_fft):
+        """
+        This method performs the training iteration on the labeled/pseudo-labeled data. This uses a special objective
+        loss function that uses KL divergence on the FFT model. This pushes the FFT model to have predictions closer to
+        the Gray model.
+        :param rgb_loader: The dataset for the Gray model
+        :param fft_loader: The dataset for the FFT model (deprecated)
+        :param optimizer_rgb: The optimizer for the Gray model (C-E)
+        :param optimizer_fft: The optimizer for the FFT model (C-E)
+        :return: None
+        """
+
         self.model_rgb.train()
         self.model_fft.train()
 
@@ -146,6 +161,13 @@ class BlumMitchellCoTraining:
         print(f"The average loss on this epoch is: {total_loss}")
 
     def label_unlabeled_data(self, unlabeled_loader):
+        """
+        This method performs pseudo-labeling (label generation). This mechanism is done by taking the highest
+        prediction from both models, summing them up and averaging. The highest average wins the title of label on
+        the agreement between the two models. The final label will always be what both models have agreed on.
+        :param unlabeled_loader: The dataloader for the unlabeled dataset
+        :return: The final sample to be added in the member list for the pseudo-labels
+        """
         self.model_rgb.eval()
         self.model_fft.eval()
 
@@ -192,9 +214,18 @@ class BlumMitchellCoTraining:
             self.used_unlabeled_indices.add(s['idx'])
             final_samples.append(s['data'])
 
-        return final_samples, final_samples
-
     def reevaluate_pseudo_labels(self, batch_size):
+
+        """
+        This method reevaluates the pseudo-samples that have been added through co-training.
+        If the confidence in the pseudo-samples is lower than the threshold on one of the models OR
+        The models have a different prediction on the pseudo-sample OR
+        One of the model predicted something difference from the actual pseudo-label THEN
+        The sample will be removed from the dataset.
+        :param batch_size: Maximum number of samples to be removed
+        :return: Returns the number of samples that have been removed
+        """
+
         # We treat pseudo-samples as a shared pool now
         rgb_pseudo = self.rgb_dataset.pseudo_samples if self.rgb_dataset.pseudo_samples else []
         fft_pseudo = self.fft_dataset.pseudo_samples if self.fft_dataset.pseudo_samples else []
@@ -230,11 +261,6 @@ class BlumMitchellCoTraining:
                 rgb_conf, rgb_pred = torch.max(rgb_probs, dim=1)
                 fft_conf, fft_pred = torch.max(fft_probs, dim=1)
 
-            # JOINT VETO LOGIC:
-            # Remove if:
-            # 1. Any model's confidence falls below its specific threshold
-            # 2. The models no longer agree with each other
-            # 3. Either model disagrees with the originally assigned pseudo-label
             low_confidence = (rgb_conf < self.confidence_thresh_rgb or fft_conf < self.confidence_thresh_fft)
             disagreement = (rgb_pred != fft_pred)
             wrong_label = (rgb_pred != pseudo_label or fft_pred != pseudo_label)
@@ -251,6 +277,20 @@ class BlumMitchellCoTraining:
         return rgb_count_removed, fft_count_removed
 
     def adjust_confidence_threshold(self, rgb_removed, fft_removed, batch_size):
+        """
+        This functions adjusts the confidence threshold during the reevaluation stage.
+        The confidence threshold for both models are modified as followed:
+        1. If the removal rate of pseudo-samples is below or equal to 30%, the threshold is augumented by 3%.
+        2. If the removal rate of pseudo-samples is below or equal to 55%, the threshold is augumented by 1%.
+        3. Else, the threshold is reduced by 4%.
+        Also, to help the models create new pseudo-labels, the confidence threshold is set to have the maximum 98.5%
+
+        :param rgb_removed: This contains the samples that have been predicted wrong for the Gray model
+        :param fft_removed: This contains the samples that have been predicted wrong for the FFT model
+        :param batch_size: The maximum number of samples that could have been removed
+        :return: None
+        """
+
         rgb_removal_rate = rgb_removed / batch_size
         fft_removal_rate = fft_removed / batch_size
 
@@ -268,8 +308,10 @@ class BlumMitchellCoTraining:
         else:
             self.confidence_thresh_fft = self.confidence_thresh_fft * 0.96
 
-        self.confidence_thresh_rgb = min(max(self.confidence_thresh_rgb, 0.75), 1.0)
-        self.confidence_thresh_fft = min(max(self.confidence_thresh_fft, 0.70), 1.0)
+        minimum_confidence = 0.985
+
+        self.confidence_thresh_rgb = min(max(self.confidence_thresh_rgb, 0.75), minimum_confidence)
+        self.confidence_thresh_fft = min(max(self.confidence_thresh_fft, 0.70), minimum_confidence)
 
         print(f"The removal rate for RGB dataset: {rgb_removal_rate}")
         print(f"The removal rate for FFT dataset: {fft_removal_rate}")
