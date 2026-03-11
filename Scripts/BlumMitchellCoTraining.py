@@ -27,9 +27,9 @@ class BlumMitchellCoTraining:
         self.confidence_thresh_rgb = confidence_thresh_rgb
         self.criterion = nn.CrossEntropyLoss()
         self.cotraining_start = cotraining_start
-        self.base_alpha = 0.6
+        self.base_alpha = 0.5
         self.loss_history = []
-        self.random_dropout = True
+        self.random_dropout = False
 
         # Keep track of datasets for pseudo-labeling
         self.rgb_dataset = None
@@ -50,7 +50,9 @@ class BlumMitchellCoTraining:
         self.unlabeled_dataset = unlabeled_dataset
 
     def init_schedulers(self, optimizer_rgb, optimizer_fft, step_size=5, gamma=0.9):
-        """Initializes the StepLR schedulers for both optimizers."""
+        """
+        Initializes the StepLR schedulers for both optimizers.
+        """
         self.scheduler_rgb = StepLR(optimizer_rgb, step_size=step_size, gamma=gamma)
         self.scheduler_fft = StepLR(optimizer_fft, step_size=step_size, gamma=gamma)
         print(f"Initialized "
