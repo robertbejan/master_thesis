@@ -1,4 +1,4 @@
-﻿# master_thesis
+﻿# Results and Release Notes
 
 #### Results on test dataset (on 20% labeled): 
 Version 3:  0.8217 (FFT), 0.9173 (Gray)
@@ -23,4 +23,5 @@ Added features:
 4. Reevaluation of the added examples is done by feeding the samples to the models they were attributed to. **If the prediction is different**, the samples are removed from the datasets.
 5. Confidence threshold is what determines a label to be chosen. This is set as a **fixed value** and is being changed based on the **removal rate during the reevaluation**.
 6. Added a Learning Rate Scheduler.
+
 
