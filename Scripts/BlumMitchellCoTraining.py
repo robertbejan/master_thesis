@@ -1,3 +1,4 @@
+import numpy as np
 import torch
 import torch.nn as nn
 from sklearn.metrics import accuracy_score, confusion_matrix
@@ -30,6 +31,9 @@ class BlumMitchellCoTraining:
         self.base_alpha = 0.6
         self.loss_history = []
         self.random_dropout = True
+        self.weighted_models = True
+        self.weight_rgb = 0.5
+        self.weight_fft = 0.5
 
         # Keep track of datasets for pseudo-labeling
         self.rgb_dataset = None
@@ -117,7 +121,10 @@ class BlumMitchellCoTraining:
         self.model_fft.train()
 
         epoch_losses = []
-        current_alpha = 0
+        current_alpha = self.base_alpha
+        mean_denominator = []
+        mean_loss_ce_rgb = []
+        mean_loss_ce_fft = []
         for (rgb_imgs, fft_imgs, labels) in rgb_loader:
             rgb_imgs, fft_imgs, labels = rgb_imgs.to(self.device), fft_imgs.to(self.device), labels.to(self.device)
 
@@ -129,7 +136,6 @@ class BlumMitchellCoTraining:
             loss_ce_rgb = self.criterion(logits_rgb, labels)
             loss_ce_fft = self.criterion(logits_fft, labels)
 
-            # 2. Refined Consistency (FFT follows RGB)
             with torch.no_grad():
                 # Soften the RGB targets to provide more 'distribution' info
                 target_probs = torch.softmax(logits_rgb / temperature, dim=1)
@@ -151,12 +157,20 @@ class BlumMitchellCoTraining:
             optimizer_rgb.step()
             optimizer_fft.step()
 
+            mean_loss_ce_rgb.append(loss_ce_rgb.item())
+            mean_loss_ce_fft.append(loss_ce_fft.item())
+            mean_denominator.append((loss_ce_rgb+loss_ce_fft+1e-8).item())
+
             epoch_losses.append(current_loss.item())
 
         self.base_alpha = current_alpha
-
         print(f"The value for alpha is now: {current_alpha:.4f}")
-        print(f"The average loss on this epoch is: {epoch_losses[-1]:.4f}")
+        loss_ce_rgb = np.mean(mean_loss_ce_rgb)
+        loss_ce_fft = np.mean(mean_loss_ce_fft)
+        denominator = loss_ce_rgb + loss_ce_fft + 1e-8
+        self.weight_rgb = np.mean(mean_loss_ce_rgb)/denominator
+        self.weight_fft = np.mean(mean_loss_ce_fft)/denominator
+        print(f"The average loss on this epoch is: {np.mean(epoch_losses):.4f}")
 
     def label_unlabeled_data(self, unlabeled_loader):
         """
@@ -180,7 +194,10 @@ class BlumMitchellCoTraining:
                 rgb_probs = torch.softmax(self.model_rgb(rgb_inputs), dim=1)
                 fft_probs = torch.softmax(self.model_fft(fft_inputs), dim=1)
 
-                combined_probs = (rgb_probs + fft_probs) / 2
+                if self.weighted_models:
+                    combined_probs = (self.weight_rgb * rgb_probs + self.weight_fft * fft_probs)
+                else:
+                    combined_probs = (rgb_probs + fft_probs) / 2
 
                 max_probs, preds = torch.max(combined_probs, dim=1)
 

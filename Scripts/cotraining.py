@@ -7,6 +7,7 @@ import torch.optim as optim
 from torchvision import models, transforms
 from torch.utils.data import DataLoader
 from torchvision.models import SqueezeNet1_1_Weights
+from torchvision.models.vision_transformer import vit_b_16, ViT_B_16_Weights
 import torch.fft
 import mlflow
 import mlflow.pytorch
@@ -14,41 +15,6 @@ import mlflow.pytorch
 from Scripts.RGBWithFFTDataset import RGBWithFFTDataset
 from Scripts.BlumMitchellCoTraining import BlumMitchellCoTraining
 from Scripts.helper_functions import serialize_confusion_matrix
-
-"""                                                           Questions:
-- 
-"""
-"""                                                            In work:
-- De modificat partea de modificat threshold
-- Echilibrarea setului de date la inceput si in timpul antrenarii
-"""
-"""                                                             To do: 
-- Change the model to regnet_x_400mf 
-https://docs.pytorch.org/vision/main/models/generated/torchvision.models.regnet_x_400mf.html#regnet-x-400mf
-- Revalidation 
-- try on other preliminary number of epochs (5, 7, 10) 
-- 80, 50, 20% unlabeled sample databases
-- individual model trainings + combination
-- co-training with different thresholds (around 3 threshold)
-- Change to adaptive confidence (descending) threshold
-"""
-
-"""                                                 What does this script file do
-This is an app that implements the training of a Cotraining algorithm using two different models, and different databases.
-
-The script is split into three parts:
-1. The declaration and definition of a custom database class named "RGBWithFFTDataset" which inherits the torch.utils.
-data.Dataset class. This class is initialized with the root directory of the data, the transformations for RGB and FFT 
-databases, and a flag that indicates whether the object contains labeled/unlabeled samples.
-2. The class for the model to be trained named "BlumMitchellCoTraining" which defines the methods for:
-- training one iteration of the cotraining model, using the labeled data;
-- labeling the unlabeled data, by predicting the best k prediction scores
-- the evaluation of the model
-3. The run section of all of the components which:
-- loads the databases and creates loaders for train, test, unlabeled, validation
-- executes the training procedure ( includes adding live samples to the databases that are used )
-- evaluates the models
-"""
 
 # Starting MLFlow API experiment
 mlflow.set_experiment("Fetal_Plane_CoTraining")
@@ -65,7 +31,8 @@ class ExperimentConfig:
         self.conf_fft = conf_fft
 
         # Fixed parameters
-        self.input_size = (227, 227)
+        self.input_size_rgb = (227, 227)
+        self.input_size_fft = (224, 224)
         self.batch_size = 30
         self.num_epochs = 60
         self.learning_rate = 1e-4
@@ -90,7 +57,7 @@ class ExperimentConfig:
             # }
         }
 
-        base_path = "D:/Facultate/Disertatie/mainProject/pythonProject1"
+        base_path = "."
         dataset_info = dataset_map[dataset_type]
 
         self.labeled_path = os.path.join(base_path, dataset_info["base"], "labeled_train")
@@ -123,13 +90,34 @@ def initialize_fft_model(num_classes, device):
     :param device: The device on which the model will be trained
     :return: The final model
     """
-    model_fft = models.squeezenet1_1(weights=SqueezeNet1_1_Weights.IMAGENET1K_V1)
-    new_layer = nn.Conv2d(1, 64, kernel_size=3, stride=2)
-    pre_trained_weights = model_fft.features[0].weight.data
-    new_layer.weight.data = pre_trained_weights.mean(dim=1, keepdim=True)
-    model_fft.features[0] = new_layer
-    model_fft.classifier[1] = nn.Conv2d(model_fft.classifier[1].in_channels, num_classes, kernel_size=1)
-    model_fft.num_classes = num_classes
+    transformer = False
+    if transformer:
+        model_fft = vit_b_16(weights=("pretrained", ViT_B_16_Weights.IMAGENET1K_V1))
+        original_conv = model_fft.conv_proj
+        new_conv = nn.Conv2d(
+            in_channels=1,
+            out_channels=original_conv.out_channels,
+            kernel_size=original_conv.kernel_size,
+            stride=original_conv.stride
+        )
+
+        with torch.no_grad():
+            new_conv.weight.data = original_conv.weight.data.mean(dim=1, keepdim=True)
+            new_conv.bias.data = original_conv.bias.data
+
+        model_fft.conv_proj = new_conv
+
+        in_features = model_fft.heads.head.in_features
+        model_fft.heads.head = nn.Linear(in_features, num_classes)
+        model_fft.num_classes = num_classes
+    else:
+        model_fft = models.squeezenet1_1(weights=SqueezeNet1_1_Weights.IMAGENET1K_V1)
+        new_layer = nn.Conv2d(1, 64, kernel_size=3, stride=2)
+        pre_trained_weights = model_fft.features[0].weight.data
+        new_layer.weight.data = pre_trained_weights.mean(dim=1, keepdim=True)
+        model_fft.features[0] = new_layer
+        model_fft.classifier[1] = nn.Conv2d(model_fft.classifier[1].in_channels, num_classes, kernel_size=1)
+        model_fft.num_classes = num_classes
     model_fft = model_fft.to(device)
     return model_fft
 
@@ -185,13 +173,13 @@ def run_experiment(config):
 
     # Transforms
     rgb_transform = transforms.Compose([
-        transforms.Resize(config.input_size),
+        transforms.Resize(config.input_size_rgb),
         transforms.ToTensor(),
         transforms.Normalize([0.5, 0.5, 0.5], [0.2, 0.2, 0.2])
     ])
 
     fft_transform = transforms.Compose([
-        transforms.Resize(config.input_size),
+        transforms.Resize(config.input_size_fft),
         transforms.Lambda(lambda x: x.unsqueeze(0) if x.dim() == 2 else x),
         transforms.Normalize([0.5], [0.2])
     ])

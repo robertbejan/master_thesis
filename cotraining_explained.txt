@@ -1,0 +1,34 @@
+"""                                                           Questions:
+-
+"""
+"""                                                            In work:
+- De modificat partea de modificat threshold
+- Echilibrarea setului de date la inceput si in timpul antrenarii
+"""
+"""                                                             To do:
+- Change the model to regnet_x_400mf
+https://docs.pytorch.org/vision/main/models/generated/torchvision.models.regnet_x_400mf.html#regnet-x-400mf
+- Revalidation
+- try on other preliminary number of epochs (5, 7, 10)
+- 80, 50, 20% unlabeled sample databases
+- individual model trainings + combination
+- co-training with different thresholds (around 3 threshold)
+- Change to adaptive confidence (descending) threshold
+"""
+
+"""                                                 What does this script file do
+This is an app that implements the training of a Cotraining algorithm using two different models, and different databases.
+
+The script is split into three parts:
+1. The declaration and definition of a custom database class named "RGBWithFFTDataset" which inherits the torch.utils.
+data.Dataset class. This class is initialized with the root directory of the data, the transformations for RGB and FFT
+databases, and a flag that indicates whether the object contains labeled/unlabeled samples.
+2. The class for the model to be trained named "BlumMitchellCoTraining" which defines the methods for:
+- training one iteration of the cotraining model, using the labeled data;
+- labeling the unlabeled data, by predicting the best k prediction scores
+- the evaluation of the model
+3. The run section of all of the components which:
+- loads the databases and creates loaders for train, test, unlabeled, validation
+- executes the training procedure ( includes adding live samples to the databases that are used )
+- evaluates the models
+"""
