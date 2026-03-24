@@ -13,14 +13,14 @@
 - Version 4 (Gray-ViT): (FFT), (Gray-ViT)  
 - Version 4 (FFT-ViT): (FFT-ViT), (Gray)
 - Version 3.5: (FFT), (Gray)
-- Version 1: (FFT), (Gray)
+- Version 1: 0.8452 (FFT), 0.9331 (Gray)
 - Independently trained branches: (FFT), (Gray)
 
 #### Results on test dataset (on 80% labeled): 
 - Version 4 (Gray-ViT): (FFT), (Gray-ViT)  
 - Version 4 (FFT-ViT): (FFT-ViT), (Gray)
 - Version 3.5: (FFT), (Gray)
-- Version 1: (FFT), (Gray)
+- Version 1: 0.8242 (FFT), 0.9423 (Gray)
 - Independently trained branches: (FFT), (Gray)
 
 #### Version 3.5 release notes
