@@ -10,7 +10,7 @@
 - Independently trained branches: 0.7589 (FFT), 0.8907 (Gray)
 
 #### Results on test dataset (on 50% labeled): 
-- Version 4 (Gray-ViT): (FFT), (Gray-ViT)  
+- Version 4 (Gray-ViT): 0.8460 (FFT), 0.9427 (Gray-ViT) 
 - Version 4 (FFT-ViT): (FFT-ViT), (Gray)
 - Version 3.5: 0.8522 (FFT), 0.9328 (Gray)
 - Version 1: 0.8452 (FFT), 0.9331 (Gray)
