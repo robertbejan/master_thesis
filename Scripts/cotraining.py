@@ -12,11 +12,12 @@ import torch.fft
 import mlflow
 import mlflow.pytorch
 
-from Scripts.RGBWithFFTDataset import RGBWithFFTDataset
-from Scripts.BlumMitchellCoTraining import BlumMitchellCoTraining
-from Scripts.helper_functions import serialize_confusion_matrix
+from RGBWithFFTDataset import RGBWithFFTDataset
+from BlumMitchellCoTraining import BlumMitchellCoTraining
+from helper_functions import serialize_confusion_matrix
 
 # Starting MLFlow API experiment
+mlflow.set_tracking_uri("sqlite:///mlflow.db")
 mlflow.set_experiment("Fetal_Plane_CoTraining")
 
 # Parameters and setup
@@ -43,18 +44,18 @@ class ExperimentConfig:
         # Dataset mapping
         # Modify when needed
         dataset_map = {
-            "small_80": {
-                "base": "small_labeled_ultrasound_dataset",
-                "unlabeled_pct": 80
-            }
+            # "small_80": {
+            #     "base": "small_labeled_ultrasound_dataset",
+            #     "unlabeled_pct": 80
+            # }
             # "organized_50": {
             #     "base": "organized_labeled_ultrasound_dataset",
             #     "unlabeled_pct": 50
             # },
-            # "large_20": {
-            #     "base": "large_labeled_ultrasound_dataset",
-            #     "unlabeled_pct": 20
-            # }
+            "large_20": {
+                "base": "large_labeled_ultrasound_dataset",
+                "unlabeled_pct": 20
+            }
         }
 
         base_path = "."
@@ -282,6 +283,8 @@ def run_experiment(config):
     torch.save(model_fft.state_dict(), model_fft_path)
     print(f"Models saved: {model_rgb_path}, {model_fft_path}")
 
+    mlflow.stop_run()
+
     # Print final statistics
     print(f"\nFinal Statistics:")
     print(f"RGB dataset final size: {len(rgb_dataset)} (original + pseudo-labels)")
@@ -345,8 +348,8 @@ def run_all_experiments():
     """
     Run all experiment combinations
     """
-    datasets = ["small_80"]
-    # datasets = ["small_80", "organized_50", "large_20"]
+    # datasets = ["small_80"]
+    datasets = ["large_20"]
     cotraining_starts = [5]  # , 7, 10]
     threshold_configs = [
         {"rgb": 0.95, "fft": 0.90},  # High thresholds
