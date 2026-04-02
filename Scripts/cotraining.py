@@ -47,7 +47,7 @@ class ExperimentConfig:
             # "small_80": {
             #     "base": "small_labeled_ultrasound_dataset",
             #     "unlabeled_pct": 80
-            # }
+            # },
             # "organized_50": {
             #     "base": "organized_labeled_ultrasound_dataset",
             #     "unlabeled_pct": 50
@@ -187,6 +187,7 @@ def run_experiment(config):
 
     # Load datasets
     rgb_dataset = RGBWithFFTDataset(config.labeled_path, rgb_transform, fft_transform, labeled=True)
+
     fft_dataset = RGBWithFFTDataset(config.labeled_path, rgb_transform, fft_transform, labeled=True)
     unlabeled_dataset = RGBWithFFTDataset(config.unlabeled_path, rgb_transform, fft_transform, labeled=False)
     val_dataset = RGBWithFFTDataset(config.val_path, rgb_transform, fft_transform, labeled=True)
@@ -283,7 +284,7 @@ def run_experiment(config):
     torch.save(model_fft.state_dict(), model_fft_path)
     print(f"Models saved: {model_rgb_path}, {model_fft_path}")
 
-    mlflow.stop_run()
+    mlflow.end_run()
 
     # Print final statistics
     print(f"\nFinal Statistics:")
