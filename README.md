@@ -26,6 +26,10 @@
 - Version 1: 0.8242 (FFT), 0.9423 (Gray)
 - Independently trained branches: 0.8020 (FFT), 0.9068 (Gray)
 
+-----------------------------------------------------------------------------------------
+
+#### Version 4 release notes
+1. Added a Visual Transformer to one of the branches (FFT or Grayscale).
 #### Version 3.5 release notes
 1. Integrated a weighted loss based pseudo-labeling.
 #### Version 3 release notes
